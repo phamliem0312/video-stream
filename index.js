@@ -6,7 +6,7 @@ app.get("/", function (req, res) {
   res.sendFile(__dirname + "/index.html");
 });
 
-app.get("/video", function (req, res) {
+app.get("/video2", function (req, res) {
   // Ensure there is a range given for the video
   const range = req.headers.range;
   if (!range) {
@@ -14,8 +14,8 @@ app.get("/video", function (req, res) {
   }
 
   // get video stats (about 61MB)
-  const videoPath = "bigbuck.mp4";
-  const videoSize = fs.statSync("bigbuck.mp4").size;
+  const videoPath = "video2.mp4";
+  const videoSize = fs.statSync("video2.mp4").size;
 
   // Parse Range
   // Example: "bytes=32324-"
@@ -50,8 +50,8 @@ app.get("/video1", function (req, res) {
   }
 
   // get video stats (about 61MB)
-  const videoPath = "bigbuck.mp4";
-  const videoSize = fs.statSync("bigbuck.mp4").size;
+  const videoPath = "video1.mp4";
+  const videoSize = fs.statSync("video1.mp4").size;
 
   // Parse Range
   // Example: "bytes=32324-"
