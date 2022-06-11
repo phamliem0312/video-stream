@@ -42,7 +42,7 @@ app.get("/video2", function (req, res) {
   videoStream.pipe(res);
 });
 
-app.get("/video1", function (req, res) {
+app.get("/file-video", function (req, res) {
   // Ensure there is a range given for the video
   const range = req.headers.range;
   if (!range) {
@@ -50,8 +50,8 @@ app.get("/video1", function (req, res) {
   }
 
   // get video stats (about 61MB)
-  const videoPath = "video1.mp4";
-  const videoSize = fs.statSync("video1.mp4").size;
+  const videoPath = "file.mp4";
+  const videoSize = fs.statSync("file.mp4").size;
 
   // Parse Range
   // Example: "bytes=32324-"
